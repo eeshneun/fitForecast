@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.headers {
+    border: 2px solid black;
+    width: 80%;
+    margin: 100px;
+    padding: 20px;
+}
+
+#date {
+    color: red;
+}
+
+.flexbox-container {
+    border: 10px, solid, blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    border: 10px, dashed, cyan;
+    margin: 10px;
+    padding: 10px;
+    flex-basis: 30%;
+}
