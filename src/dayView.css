@@ -3,24 +3,24 @@ body {
 }
 
 .headers {
-    border: 2px solid black;
+    border: 2px solid #426F8F;
     width: 80%;
     margin: 100px;
     padding: 20px;
 }
 
 #date {
-    color: red;
+    color: #EB6378;
 }
 
 .flexbox-container {
-    border: 10px, solid, blue;
+    border: 10px, solid, #63A6D6;
     display: flex;
     justify-content: space-between;
 }
 
 .box {
-    border: 10px, dashed, cyan;
+    border: 10px, dashed, #D663B6;
     margin: 10px;
     padding: 10px;
     flex-basis: 30%;
