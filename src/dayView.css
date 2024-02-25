@@ -5,16 +5,13 @@ body {
 .headers {
     border: 2px solid #426F8F;
     width: 80%;
-    margin: 100px;
+    margin: 20px;
     padding: 20px;
 }
 
 #date {
-<<<<<<< HEAD
     color: purple;
-=======
-    color: #EB6378;
->>>>>>> 23d95a22d2e9a1935df69f52a460104cc8b204c1
+
 }
 
 .flexbox-container {
