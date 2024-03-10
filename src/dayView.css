@@ -5,24 +5,28 @@ body {
 .headers {
     border: 2px solid #426F8F;
     width: 80%;
-    margin: 100px;
+    margin: 80px;
     padding: 20px;
 }
 
 #date {
     color: purple;
-
 }
 
 .flexbox-container {
-    border: 2px solid #63A6D6;
+    border: 10px, solid, #63A6D6;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .box {
-    border: 2px dashed #D663B6;
+    border: 10px, dashed, #D663B6;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     flex-basis: 30%;
+}
+
+.temp {
+    text-align: left;
 }

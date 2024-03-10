@@ -1,11 +1,8 @@
 import './dayView.css'
-import {Clothes} from './clothes'
-import WeekView from './weekView';
+import { Clothes } from './clothes'
 
 
-
-
-function DayView() {
+function WeekView() {
 
     const today = new Date();
     const temp : number = 73;
@@ -23,11 +20,13 @@ function DayView() {
 
    return (
     <div className="headers">
+       <div className= "location"><h2>{location}</h2></div>
        <div className= "temp"><h3>{temp} °F</h3></div>
 
+                    <a href ="/weekView">go to week view</a>
                 
-                <h1 id="date">{today.toDateString()}</h1>
-            <h2 id="location"> {location}</h2>
+                <h1>Week View</h1>
+            <h2 id="date"> {today.toDateString()} </h2>
             <div className="flexbox-container">
                 <div className="box"><b>top:</b> {top}</div>
                 <div className="box"><b>bottoms:</b> {bottom}</div>
@@ -41,4 +40,4 @@ function DayView() {
 
 
 
-export default DayView
+export default WeekView
