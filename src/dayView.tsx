@@ -1,6 +1,8 @@
 import './dayView.css'
 import {Clothes} from './clothes'
 import WeekView from './weekView';
+import Weather from './weather';
+import { useState } from 'react';
 
 
 
@@ -8,10 +10,10 @@ import WeekView from './weekView';
 function DayView() {
 
     const today = new Date();
-    const temp : number = 73;
+    const [currentTemperature, setCurrentTemperature] = useState<number | null>(null);
     const location : string = "Boston"
     let clothes : Clothes = new Clothes("default","default", "default", "default");
-    clothes = clothes.setClothes(temp);
+    clothes = clothes.setClothes(currentTemperature ?? 0);
     const top : string = clothes.top;
     const bottom : string = clothes.bottom;
     const outerwear : string = clothes.outerwear;
@@ -23,8 +25,12 @@ function DayView() {
 
    return (
     <div className="headers">
-       <div className= "temp"><h3>{temp} °F</h3></div>
+       <div className= "temp">
+        <Weather currentTemperature={currentTemperature} setCurrentTemperature={setCurrentTemperature} />
+        {/* <h3>{currentTemperature} °F</h3> */}
+        </div>
 
+<a href='/weekView'>Go to WeekView</a>
                 
                 <h1 id="date">{today.toDateString()}</h1>
             <h2 id="location"> {location}</h2>

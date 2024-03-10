@@ -2,7 +2,7 @@ import './dayView.css'
 import { Clothes } from './clothes'
 
 
-function WeekView() {
+export default function WeekView() {
 
     const today = new Date();
     const temp : number = 73;
@@ -37,7 +37,3 @@ function WeekView() {
     )
 
 }
-
-
-
-export default WeekView
