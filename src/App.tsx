@@ -1,5 +1,6 @@
 import DayView from './dayView'
 import WeekView from './weekView';
+import HomePage from './homePage';
 import { Routes, Route, Outlet, Link, BrowserRouter } from "react-router-dom";
 
 import './App.css'
@@ -12,8 +13,9 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route index element={<DayView />}/>
-       <Route path="weekView"  element={<h1>WeekView</h1>}/>
+        <Route index element={<HomePage />}/>
+        <Route path="/dayView"  element={<DayView />}/>
+       <Route path="/weekView"  element={<WeekView />}/>
       </Routes>
     </BrowserRouter>
 

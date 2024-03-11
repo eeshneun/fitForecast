@@ -1,5 +1,4 @@
 import './dayView.css'
-import {Clothes} from './clothes'
 
 
 function HomePage() {
@@ -13,7 +12,10 @@ function HomePage() {
    return (
     <div>
     <h1 id="title">FITFORECAST</h1>
-    
+    <p>home page</p>
+    <a href='/dayView'>Go to DayView</a>
+    <br></br>
+    <a href='/weekView'>Go to WeekView</a>
 
     </div>
     )

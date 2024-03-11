@@ -1,6 +1,5 @@
 import './dayView.css'
 import {Clothes} from './clothes'
-import WeekView from './weekView';
 import Weather from './weather';
 import { useState } from 'react';
 

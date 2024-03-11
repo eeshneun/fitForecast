@@ -22,10 +22,9 @@ export default function WeekView() {
     <div className="headers">
        <div className= "location"><h2>{location}</h2></div>
        <div className= "temp"><h3>{temp} °F</h3></div>
-
-                    <a href ="/weekView">go to week view</a>
                 
                 <h1>Week View</h1>
+                <a href='/dayView'>Go to DayView</a>
             <h2 id="date"> {today.toDateString()} </h2>
             <div className="flexbox-container">
                 <div className="box"><b>top:</b> {top}</div>
