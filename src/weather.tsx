@@ -29,12 +29,13 @@ export default function Weather({currentTemperature, setCurrentTemperature}: Pro
             const responses = await fetchWeatherApi("https://api.open-meteo.com/v1/gfs", params)
 
             const response = responses[0];
-
             const utcOffsetSeconds = response.utcOffsetSeconds();
-
+            
             const current = response.current();
-
+            
             if (current) {
+                
+                // console.log(new Date((Number(current.time()) + utcOffsetSeconds) * 1000));
                 const currentTemp = {
                     time: new Date((Number(current.time()) + utcOffsetSeconds) * 1000),
                     temperature2m: current.variables(0)!.value(),

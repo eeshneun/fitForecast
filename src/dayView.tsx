@@ -29,8 +29,8 @@ function DayView() {
         {/* <h3>{currentTemperature} °F</h3> */}
         </div>
 
-<a href='/weekView' class= "button">Go to WeekView</a>
-<a href= "http://localhost:5173/" class = "button">Go to HomePage</a>
+<a href='/weekView' className= "button">Go to WeekView</a>
+<a href= "http://localhost:5173/" className = "button">Go to HomePage</a>
     
                 
                 <h1 id="date">{today.toDateString()}</h1>
