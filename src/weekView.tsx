@@ -78,14 +78,14 @@ export default function WeekView({ userLoc, setUserLoc }: Props) {
 
             // `weatherData` now contains a simple structure with arrays for datetime and weather data
             let temps: WeatherForDay[] = []
-            
+
             for (let i = 0; i < weatherData.hourly.time.length; i++) {
                 const date = new Date(weatherData.hourly.time[i].toISOString())
                 if (date.getHours() == 12) {
                     temps = [...temps, {
-                        temperature: weatherData.hourly.temperature2m[i], date: date, 
+                        temperature: weatherData.hourly.temperature2m[i], date: date,
                         clothing: tempToClothing(weatherData.hourly.temperature2m[i])
-                        }
+                    }
                     ]
 
                 }
@@ -104,28 +104,32 @@ export default function WeekView({ userLoc, setUserLoc }: Props) {
             <div className="location"><h3>{location}</h3></div>
             <div className="temp">
             </div>
-            <div className = "input">
+            <div className="input">
                 <p>enter new location coords:</p>
-            <Input setUserLoc={setUserLoc} />
+                <Input setUserLoc={setUserLoc} />
             </div>
             <h1>Week View</h1>
             <a href='/dayView' className="button">Go to DayView</a>
             <a href="http://localhost:5173/" className="button">Go to HomePage</a>
             {temperatures && temperatures.map(t => <div>
-                <div>{Math.floor(t.temperature * 100) / 100} ˚F</div>
+                <div>
+                    <b>
+                        Daily Average:
+                    </b> {Math.floor(t.temperature * 100) / 100} ˚F
+                </div>
                 <div className="flexbox-container">
                     <div id="date"> {t.date.toDateString()} </div>
                     <div className="box"><b>top:</b> {t.clothing.top}</div>
                     <div className="box"><b>bottoms:</b> {t.clothing.bottom}</div>
                     <div className="box"><b>outerwear:</b> {t.clothing.outerwear}</div>
-                    <div className="box"><b>shoes:</b> {t.clothing.shoes}</div>                   
+                    <div className="box"><b>shoes:</b> {t.clothing.shoes}</div>
                 </div>
             </div>
             )
             }
         </div>
     )
-    
+
 }
 
 
