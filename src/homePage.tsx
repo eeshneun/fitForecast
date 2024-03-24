@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import './homePage.css'
+import Input from './input'
 
 
 function HomePage() {
 
+    const [location, setLocation] = useState(String)
 
  
     // document.getElementById("date").innerHTML = today;

@@ -3,6 +3,7 @@ import { Clothes } from './clothes'
 import { useEffect, useState } from 'react';
 import { fetchWeatherApi } from 'openmeteo';
 import Weather from './weather';
+import Input, { Coordinates } from './input.tsx';
 
 
 function tempToClothing(temp: number) {
@@ -36,7 +37,13 @@ type WeatherForDay = {
 //     "precipitation_unit": "inch",
 //     "timezone": "auto"
 // };
-export default function WeekView() {
+
+type Props = {
+    userLoc: Coordinates | null;
+    setUserLoc: React.Dispatch<React.SetStateAction<Coordinates | null>>
+
+}
+export default function WeekView({ userLoc, setUserLoc }: Props) {
     const [temperatures, setTemperatures] = useState<WeatherForDay[] | null>(null);
     //const [top, setTop] = useState<String[] | null>(null);
     //const [bot, setBot] = useState<String[] | null>(null);
@@ -60,8 +67,8 @@ export default function WeekView() {
     useEffect(() => {
         async function fetch() {
             const params = {
-                "latitude": 52.52,
-                "longitude": 13.41,
+                "latitude": userLoc ? userLoc.latitude : 0.00,
+                "longitude": userLoc ? userLoc.longitude : 0.00,
                 "hourly": "temperature_2m",
                 "temperature_unit": "fahrenheit"
             };
@@ -156,6 +163,8 @@ export default function WeekView() {
             <div className="location"><h2>{location}</h2></div>
             <div className="temp">
             </div>
+            
+            <Input setUserLoc={() => {}} />
 
             <h1>Week View</h1>
             <a href='/dayView' className="button">Go to DayView</a>
