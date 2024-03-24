@@ -50,4 +50,12 @@ body {
     font-size: 30;
   }
 
+  .location {
+    text-align: left;
+}
+
+.input {
+    text-align: right;
+}
+
   

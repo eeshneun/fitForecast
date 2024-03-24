@@ -18,7 +18,7 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage />}/>
+        <Route index element={<HomePage userLoc={userLoc} setUserLoc={setUserLoc} />}/>
         <Route path="/dayView"  element={<DayView userLoc={userLoc} setUserLoc={setUserLoc} />}/>
        <Route path="/weekView"  element={<WeekView userLoc={userLoc} setUserLoc={setUserLoc} />}/>
       </Routes>

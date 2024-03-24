@@ -28,7 +28,15 @@ body {
 }
 
 .temp {
+    text-align: center;
+}
+
+.location {
     text-align: left;
+}
+
+.input {
+    text-align: right;
 }
 
 .button {

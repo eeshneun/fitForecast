@@ -44,19 +44,20 @@ function DayView({ userLoc, setUserLoc }: Props) {
 
     return (
         <div className="headers">
-            <Input setUserLoc={setUserLoc} />
-
-
-            <div className="temp">
-                <Weather currentTemperature={currentTemperature} setCurrentTemperature={setCurrentTemperature} userLoc={userLoc} />
+            <div className="location">
+                <h3>{location}</h3>
             </div>
-
+            <div className = "input">
+                <p>enter new location coords:</p>
+            <Input setUserLoc={setUserLoc} />
+            </div>
             <a href='/weekView' className="button">Go to WeekView</a>
             <a href="http://localhost:5173/" className="button">Go to HomePage</a>
-
-
-            <h1 id="location"> {location}</h1>
             <h2 id="date">{today.toDateString()}</h2>
+            <div className="temp">
+                <h3><Weather currentTemperature={currentTemperature} setCurrentTemperature={setCurrentTemperature} userLoc={userLoc} /></h3>
+            </div>
+     
             <div className="flexbox-container">
                 <div className="box"><b>top:</b> {top}</div>
                 <div className="box"><b>bottoms:</b> {bottom}</div>
