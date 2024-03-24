@@ -2,8 +2,8 @@ import { fetchWeatherApi } from "openmeteo";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 const params = {
-    "latitude": 42.34,
-    "longitude": -71.09,
+    "latitude": 52.52,
+    "longitude": 13.41,
     "current": ["temperature_2m", "apparent_temperature", "precipitation"],
     "hourly": ["temperature_2m", "apparent_temperature", "precipitation"],
     "daily": ["temperature_2m_max", "temperature_2m_min"],
@@ -62,5 +62,5 @@ export default function Weather({currentTemperature, setCurrentTemperature}: Pro
             // })
     }, [])
 
-    return <>{currentTemperature && currentTemperature} °F</>
+    return <>{currentTemperature && Math.floor(currentTemperature * 100) / 100} °F</>
 }

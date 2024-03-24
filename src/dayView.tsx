@@ -3,7 +3,20 @@ import {Clothes} from './clothes'
 import Weather from './weather';
 import { useState } from 'react';
 
-
+function tempToClothing(temp: number) {
+    if (temp > 70) {
+        console.log(temp);
+        return { top: "short sleeves", bottom: "shorts", outerwear: "none", shoes: "sandals/sneakers" };
+    }
+    else if (temp <= 70 && temp > 40) {
+        console.log(temp);
+        return { top: "long sleeves", bottom: "leggings", outerwear: "light jacket", shoes: "sneakers" };
+    }
+    else {
+        console.log(temp);
+        return { top: "sweater", bottom: "jeans", outerwear: "heavy jacket", shoes: "boots" };
+    }
+}
 
 
 function DayView() {
@@ -11,8 +24,8 @@ function DayView() {
     const today = new Date();
     const [currentTemperature, setCurrentTemperature] = useState<number | null>(null);
     const location : string = "Boston"
-    let clothes : Clothes = new Clothes("default","default", "default", "default");
-    clothes = clothes.setClothes(currentTemperature ?? 0);
+    let clothes : Clothes =  {top: "default",bottom: "default", outerwear:"default", shoes:"default"};
+    clothes = tempToClothing(currentTemperature ?? 0);
     const top : string = clothes.top;
     const bottom : string = clothes.bottom;
     const outerwear : string = clothes.outerwear;
@@ -26,15 +39,14 @@ function DayView() {
     <div className="headers">
        <div className= "temp">
         <Weather currentTemperature={currentTemperature} setCurrentTemperature={setCurrentTemperature} />
-        {/* <h3>{currentTemperature} °F</h3> */}
         </div>
 
 <a href='/weekView' className= "button">Go to WeekView</a>
 <a href= "http://localhost:5173/" className = "button">Go to HomePage</a>
     
                 
-                <h1 id="date">{today.toDateString()}</h1>
-            <h2 id="location"> {location}</h2>
+                <h1 id="location"> {location}</h1>
+            <h2 id="date">{today.toDateString()}</h2>
             <div className="flexbox-container">
                 <div className="box"><b>top:</b> {top}</div>
                 <div className="box"><b>bottoms:</b> {bottom}</div>
