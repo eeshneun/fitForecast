@@ -1,6 +1,6 @@
 import { useState } from "react";
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+
 
 type Coordinates = {
     longitude: number | undefined;
@@ -24,12 +24,14 @@ export default function Input({ setUserLoc }: Props) {
     // console.log(userLat);
 
     return <div>
-        <div><input type="number" placeholder="longitude" value={userLong} onChange={(e) => setUserLong((e.target as any).value)} /></div>
-        <div><input type="number" placeholder="latitude" value={userLat} onChange={(e) => setUserLat((e.target as any).value)} /></div>
+        <div><input type="number" placeholder="longitude" value={userLong} id= "longitude" onChange={(e) => setUserLong((e.target as any).value)} /></div>
+        <div><input type="number" placeholder="latitude" value={userLat} id = "latitude" onChange={(e) => setUserLat((e.target as any).value)} /></div>
         <button
             disabled={userLong == undefined || userLat == undefined}
             onClick={() =>
                 setUserLoc({ longitude: userLong, latitude: userLat })
+
+                
             }
         >enter</button>
     </div>;

@@ -55,7 +55,10 @@ body {
 }
 
 .input {
-    text-align: right;
+    text-align: center;
+    padding-bottom: 10px;
 }
+
+
 
   

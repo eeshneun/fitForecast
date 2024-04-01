@@ -44,11 +44,11 @@ function DayView({ userLoc, setUserLoc }: Props) {
 
     return (
         <div className="headers">
-            <div className="location">
+            {/* <div className="location">
                 <h3>{location}</h3>
-            </div>
+            </div> */}
             <div className = "input">
-                <p>enter new location coords:</p>
+                <p>enter your location coords:</p>
             <Input setUserLoc={setUserLoc} />
             </div>
             <a href='/weekView' className="button">Go to WeekView</a>

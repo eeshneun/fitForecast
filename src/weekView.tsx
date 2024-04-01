@@ -101,11 +101,11 @@ export default function WeekView({ userLoc, setUserLoc }: Props) {
 
     return (
         <div className="headers">
-            <div className="location"><h3>{location}</h3></div>
+            {/* <div className="location"><h3>{location}</h3></div> */}
             <div className="temp">
             </div>
             <div className="input">
-                <p>enter new location coords:</p>
+                <p>enter your location coords:</p>
                 <Input setUserLoc={setUserLoc} />
             </div>
             <h1>Week View</h1>
